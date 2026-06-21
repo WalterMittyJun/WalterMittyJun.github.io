@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Travel photo placeholder">
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset="1" stop-color="#dccab4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#3a2a18" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="750" fill="url(#paper)"/>
+  <g fill="none" stroke="#b99774" stroke-opacity=".26">
+    <path d="M0 122h1000M0 250h1000M0 378h1000M0 506h1000M0 634h1000"/>
+    <path d="M122 0v750M250 0v750M378 0v750M506 0v750M634 0v750M762 0v750M890 0v750"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="138" y="104" width="260" height="320" rx="8" fill="#fffdf8" transform="rotate(-7 268 264)"/>
+    <rect x="600" y="82" width="260" height="320" rx="8" fill="#fffdf8" transform="rotate(6 730 242)"/>
+    <rect x="368" y="260" width="260" height="320" rx="8" fill="#fffdf8" transform="rotate(-1 498 420)"/>
+    <rect x="648" y="390" width="230" height="282" rx="8" fill="#fffdf8" transform="rotate(8 763 531)"/>
+  </g>
+  <g fill="#eadfce">
+    <rect x="174" y="130" width="190" height="190" rx="4" transform="rotate(-7 269 225)"/>
+    <rect x="630" y="110" width="200" height="190" rx="4" transform="rotate(6 730 205)"/>
+    <rect x="398" y="288" width="200" height="190" rx="4" transform="rotate(-1 498 383)"/>
+    <rect x="672" y="414" width="182" height="166" rx="4" transform="rotate(8 763 497)"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Berlin street placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5e7d3"/>
+      <stop offset=".5" stop-color="#b57952"/>
+      <stop offset="1" stop-color="#20313d"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <g fill="#24313a" opacity=".9">
+    <rect x="76" y="100" width="150" height="520"/>
+    <rect x="276" y="160" width="128" height="460"/>
+    <rect x="668" y="82" width="164" height="548"/>
+  </g>
+  <g fill="#fff0d5" opacity=".22">
+    <rect x="104" y="142" width="34" height="64"/>
+    <rect x="162" y="142" width="34" height="64"/>
+    <rect x="304" y="204" width="30" height="58"/>
+    <rect x="352" y="204" width="30" height="58"/>
+    <rect x="704" y="136" width="34" height="64"/>
+    <rect x="762" y="136" width="34" height="64"/>
+  </g>
+  <path d="M340 900l84-280h52l84 280z" fill="#1b252c"/>
+  <path d="M106 900l284-294h82L248 900z" fill="#fff4de" opacity=".32"/>
+  <path d="M794 900L510 606h-82l224 294z" fill="#fff4de" opacity=".24"/>
+  <path d="M0 642c134-34 270-32 408 6s298 32 492-22v274H0z" fill="#17232c" opacity=".84"/>
+</svg>
