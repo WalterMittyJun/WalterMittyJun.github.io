@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Berlin Cathedral placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f4dfbd"/>
+      <stop offset=".55" stop-color="#a66b45"/>
+      <stop offset="1" stop-color="#24384a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="690" cy="180" r="118" fill="#fff2bf" opacity=".48"/>
+  <path d="M124 610h652v88H124z" fill="#1d2b34"/>
+  <path d="M214 610h118V352H214zM568 610h118V352H568z" fill="#1d2b34"/>
+  <path d="M356 610h188V304H356z" fill="#1d2b34"/>
+  <path d="M376 304c8-98 140-98 148 0z" fill="#1d2b34"/>
+  <path d="M424 218c4-60 48-60 52 0z" fill="#1d2b34"/>
+  <path d="M450 154l18 68h-36z" fill="#1d2b34"/>
+  <path d="M0 710c140-45 247-44 356 0s254 40 544-24v214H0z" fill="#17222a" opacity=".82"/>
+</svg>

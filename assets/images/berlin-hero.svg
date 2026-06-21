@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Berlin editorial hero placeholder">
+  <defs>
+    <linearGradient id="warm" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ede1cd"/>
+      <stop offset=".42" stop-color="#c58a59"/>
+      <stop offset="1" stop-color="#263848"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .12"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#warm)"/>
+  <path d="M0 610h1200v290H0z" fill="#202b31" opacity=".8"/>
+  <g fill="#f7ead8" opacity=".34">
+    <rect x="760" y="160" width="70" height="450"/>
+    <rect x="852" y="120" width="70" height="490"/>
+    <rect x="944" y="190" width="70" height="420"/>
+    <rect x="1036" y="96" width="70" height="514"/>
+  </g>
+  <g fill="#1f2d35">
+    <rect x="152" y="508" width="148" height="102"/>
+    <rect x="336" y="444" width="246" height="166"/>
+    <path d="M368 444c8-116 178-116 186 0z"/>
+    <path d="M424 328c6-78 70-78 76 0z"/>
+    <path d="M462 250l18 82h-36z"/>
+  </g>
+  <g stroke="#fff4df" stroke-width="4" stroke-opacity=".28">
+    <path d="M0 704c160-50 306-50 438 0s276 44 456-12 246-26 306 8"/>
+    <path d="M0 762c160-50 306-50 438 0s276 44 456-12 246-26 306 8"/>
+  </g>
+  <rect width="1200" height="900" filter="url(#grain)"/>
+</svg>
