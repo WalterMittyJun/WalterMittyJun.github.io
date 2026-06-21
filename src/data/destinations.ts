@@ -1,3 +1,27 @@
+export interface GalleryPhoto {
+  title: string;
+  image: string;
+  caption: string;
+}
+
+export interface Destination {
+  slug: string;
+  city: string;
+  country: string;
+  region: string;
+  season: string;
+  year: string;
+  status: string;
+  href: string;
+  cover: string;
+  hero?: string;
+  accent?: string;
+  summary: string;
+  intro?: string;
+  notes?: string[];
+  gallery?: GalleryPhoto[];
+}
+
 export const siteConfig = {
   name: "Walter Mitty",
   title: "Walter Mitty 的旅行手记",
@@ -12,7 +36,7 @@ export const siteConfig = {
   ],
 };
 
-export const destinations = [
+export const destinations: Destination[] = [
   {
     slug: "berlin",
     city: "Berlin",

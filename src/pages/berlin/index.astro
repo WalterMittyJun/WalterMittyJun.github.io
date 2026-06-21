@@ -1,0 +1,100 @@
+---
+import GalleryCard from "../../components/GalleryCard.astro";
+import PhotoSlots from "../../components/PhotoSlots.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { destinations } from "../../data/destinations";
+
+const destination = destinations.find((item) => item.slug === "berlin");
+
+if (!destination) {
+  throw new Error("Berlin destination data is missing");
+}
+
+const heroImage = destination.hero ?? destination.cover;
+const intro = destination.intro ?? destination.summary;
+---
+
+<BaseLayout
+  title="Berlin"
+  description="柏林旅行相册：穹顶、河岸、博物馆岛和街区漫游。"
+  ogImage="/assets/images/berlin-cover-editorial.png"
+>
+  <main>
+    <section class="site-shell page-hero">
+      <p class="eyebrow">Germany / City Walk</p>
+      <h1>{destination.city}</h1>
+      <p class="lead">{intro}</p>
+      <div class="meta-row">
+        <span class="pill">{destination.country}</span>
+        <span class="pill">{destination.season}</span>
+        <span class="pill">{destination.year}</span>
+        <span class="pill">{destination.region}</span>
+      </div>
+    </section>
+
+    <section class="site-shell section">
+      <article class="panel story-panel">
+        <div class="story-media">
+          <img src={heroImage} alt="柏林城市视觉" />
+        </div>
+        <div class="story-copy">
+          <div>
+            <p class="eyebrow">Opening Note</p>
+            <h2>在一座城市里练习慢下来。</h2>
+            <p class="lead">
+              这一页先放柏林的首批照片和文案方向。等你补上真实照片后，可以按“清晨的建筑、河边的步行、夜色里的街区”拆成三个章节。
+            </p>
+          </div>
+          <a class="button secondary" href="#gallery">看相册占位</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="site-shell section">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Route Notes</p>
+          <h2>路线和记录角度</h2>
+        </div>
+        <p>这里不是传统攻略，更像是你之后写游记时的骨架：地点、感受、照片章节。</p>
+      </div>
+      <div class="timeline">
+        {
+          destination.notes?.map((note, index) => (
+            <div class="timeline-item">
+              <time>{String(index + 1).padStart(2, "0")}</time>
+              <div>
+                <h3>{note.split("。")[0]}</h3>
+                <p>{note}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="site-shell section" id="gallery">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>柏林相册</h2>
+        </div>
+        <p>现在使用 SVG 风格图占位。把真实照片放入 <code>public/assets/photos/germany-berlin/</code> 后，在数据文件中替换 <code>image</code> 路径即可。</p>
+      </div>
+      <div class="gallery-grid">
+        {destination.gallery?.map((photo) => <GalleryCard photo={photo} />)}
+      </div>
+    </section>
+
+    <section class="site-shell section" id="photo-slots">
+      <div class="placeholder-dropzone">
+        <p class="eyebrow">Replace With Your Photos</p>
+        <h2>建议补充的柏林照片</h2>
+        <p class="lead">
+          首页封面、城市封面、三张相册图和一张路线图已经预留。建议先上传 1600px 以上宽度的 JPG/WebP，文件名保持英文小写和短横线。
+        </p>
+        <PhotoSlots />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

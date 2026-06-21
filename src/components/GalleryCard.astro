@@ -1,0 +1,21 @@
+---
+interface Props {
+  photo: {
+    title: string;
+    image: string;
+    caption: string;
+  };
+}
+
+const { photo } = Astro.props;
+---
+
+<article class="gallery-card">
+  <figure>
+    <img src={photo.image} alt={photo.title} loading="lazy" />
+    <figcaption>
+      <strong>{photo.title}</strong><br />
+      {photo.caption}
+    </figcaption>
+  </figure>
+</article>

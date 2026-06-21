@@ -1,11 +1,11 @@
 # Travel Photo Library
 
-Put real travel photos here and reference them from `data/destinations.js`.
+Put real travel photos here and reference them from `src/data/destinations.ts`.
 
 Recommended structure:
 
 ```text
-assets/photos/
+public/assets/photos/
   germany-berlin/
     hero-cover.jpg
     germany-berlin-cover.jpg
@@ -24,7 +24,7 @@ Suggested image sizes:
 
 To add a new destination:
 
-1. Create a folder under `assets/photos/`.
-2. Add a destination object in `data/destinations.js`.
-3. Copy `berlin/index.html` into a new city folder.
-4. Change the page `data-destination` value to match the new destination `slug`.
+1. Create a folder under `public/assets/photos/`.
+2. Add a destination object in `src/data/destinations.ts`.
+3. Copy `src/pages/berlin/index.astro` into a new city folder.
+4. Change the page to load the new destination `slug`.

@@ -1,0 +1,35 @@
+---
+interface Props {
+  destination: {
+    city: string;
+    country: string;
+    region: string;
+    season: string;
+    year: string;
+    status: string;
+    href: string;
+    cover: string;
+    summary: string;
+  };
+}
+
+const { destination } = Astro.props;
+---
+
+<article class="destination-card">
+  <a class="card-media" href={destination.href} aria-label={`查看 ${destination.city}`}>
+    <img src={destination.cover} alt={`${destination.city} travel cover`} loading="lazy" />
+    <span class="card-label">{destination.status}</span>
+  </a>
+  <div class="card-body">
+    <p class="eyebrow">{destination.region}</p>
+    <h3>{destination.city}</h3>
+    <div class="meta-row">
+      <span class="pill">{destination.country}</span>
+      <span class="pill">{destination.season}</span>
+      <span class="pill">{destination.year}</span>
+    </div>
+    <p>{destination.summary}</p>
+    <a class="mini-link" href={destination.href}>打开这段旅程 -&gt;</a>
+  </div>
+</article>

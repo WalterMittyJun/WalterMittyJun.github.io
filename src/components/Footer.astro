@@ -1,0 +1,16 @@
+---
+import { siteConfig } from "../data/destinations";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="site-shell footer-inner">
+    <span>© {year} {siteConfig.name}. Built for slow travel.</span>
+    <div class="footer-links">
+      <a href="/about/">关于</a>
+      <a href="/services/">整理方法</a>
+      <a href="/contact/">联系</a>
+    </div>
+  </div>
+</footer>
