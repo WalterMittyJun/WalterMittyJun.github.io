@@ -77,6 +77,35 @@ export const destinations: Destination[] = [
     ],
   },
   {
+    slug: "shanghai",
+    city: "Shanghai",
+    country: "China",
+    region: "Asia",
+    season: "Night Walk",
+    year: "2026",
+    status: "已开始整理",
+    href: "/shanghai/",
+    cover: "/assets/photos/china-shanghai/hero-cover.jpg",
+    hero: "/assets/photos/china-shanghai/hero-cover.jpg",
+    accent: "#24384a",
+    summary:
+      "在黄浦江边看城市亮起来，水面把天际线拉长成一段会流动的夜色。",
+    intro:
+      "上海的夜晚有一种很清晰的层次：江风、灯光、船影和高楼的轮廓。站在外滩边，城市像刚刚打开的胶片，所有反光都在提醒你慢一点看。",
+    notes: [
+      "把外滩夜景作为这一页的主视觉，先建立上海的城市情绪。",
+      "后续可以补充白天街区、咖啡馆、老建筑和黄浦江两岸的对照照片。",
+      "照片章节建议按天际线、江边步行、城市细节三个方向扩展。",
+    ],
+    gallery: [
+      {
+        title: "Bund Skyline",
+        image: "/assets/photos/china-shanghai/hero-cover.jpg",
+        caption: "黄浦江上的反光，把上海的夜色铺成一条缓慢移动的路。",
+      },
+    ],
+  },
+  {
     slug: "iceland",
     city: "Iceland",
     country: "Iceland",

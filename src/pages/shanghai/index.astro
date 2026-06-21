@@ -1,0 +1,100 @@
+---
+import GalleryCard from "../../components/GalleryCard.astro";
+import PhotoSlots from "../../components/PhotoSlots.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { destinations } from "../../data/destinations";
+
+const destination = destinations.find((item) => item.slug === "shanghai");
+
+if (!destination) {
+  throw new Error("Shanghai destination data is missing");
+}
+
+const heroImage = destination.hero ?? destination.cover;
+const intro = destination.intro ?? destination.summary;
+---
+
+<BaseLayout
+  title="Shanghai"
+  description="上海旅行相册：黄浦江、外滩夜景和城市天际线。"
+  ogImage={destination.cover}
+>
+  <main>
+    <section class="site-shell page-hero">
+      <p class="eyebrow">China / City Lights</p>
+      <h1>{destination.city}</h1>
+      <p class="lead">{intro}</p>
+      <div class="meta-row">
+        <span class="pill">{destination.country}</span>
+        <span class="pill">{destination.season}</span>
+        <span class="pill">{destination.year}</span>
+        <span class="pill">{destination.region}</span>
+      </div>
+    </section>
+
+    <section class="site-shell section">
+      <article class="panel story-panel">
+        <div class="story-media">
+          <img src={heroImage} alt="上海外滩夜景" />
+        </div>
+        <div class="story-copy">
+          <div>
+            <p class="eyebrow">Opening Note</p>
+            <h2>黄浦江边，城市把夜色点亮。</h2>
+            <p class="lead">
+              这一页先用你提供的外滩夜景作为上海的主视觉。后续可以继续补充街区、餐桌、老建筑和江边散步的照片，让上海从一张夜景慢慢长成完整旅程。
+            </p>
+          </div>
+          <a class="button secondary" href="#gallery">看上海相册</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="site-shell section">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Route Notes</p>
+          <h2>路线和记录角度</h2>
+        </div>
+        <p>先从外滩夜景开始，后续可以把上海拆成江边、街区、建筑和餐桌几条线。</p>
+      </div>
+      <div class="timeline">
+        {
+          destination.notes?.map((note, index) => (
+            <div class="timeline-item">
+              <time>{String(index + 1).padStart(2, "0")}</time>
+              <div>
+                <h3>{note.split("。")[0]}</h3>
+                <p>{note}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="site-shell section" id="gallery">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>上海相册</h2>
+        </div>
+        <p>这张照片已经放入 <code>public/assets/photos/china-shanghai/hero-cover.jpg</code>。继续补照片时，把新图放进同一目录并在数据文件里扩展 gallery 即可。</p>
+      </div>
+      <div class="gallery-grid">
+        {destination.gallery?.map((photo) => <GalleryCard photo={photo} />)}
+      </div>
+    </section>
+
+    <section class="site-shell section" id="photo-slots">
+      <div class="placeholder-dropzone">
+        <p class="eyebrow">Next Photos</p>
+        <h2>建议继续补充的上海照片</h2>
+        <p class="lead">
+          可以继续补充白天的外滩、武康路或衡复风貌区、咖啡馆细节、黄浦江游船和夜色街景。
+        </p>
+        <PhotoSlots />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
