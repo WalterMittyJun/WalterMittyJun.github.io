@@ -119,17 +119,33 @@ export const destinations: Destination[] = [
       "为瀑布、黑沙滩和极光预留的章节。适合做成宽幅照片和路线日志。",
   },
   {
-    slug: "japan",
-    city: "Japan",
+    slug: "tokyo",
+    city: "Tokyo",
     country: "Japan",
     region: "Asia",
-    season: "To be planned",
-    year: "Next",
-    status: "待补照片",
-    href: "#photo-slots",
-    cover: "/assets/images/photo-placeholder-postcards.png",
+    season: "Cloudy Day",
+    year: "2026",
+    status: "已开始整理",
+    href: "/tokyo/",
+    cover: "/assets/photos/japan-tokyo/hero-cover.jpg",
+    hero: "/assets/photos/japan-tokyo/hero-cover.jpg",
+    accent: "#6f4b3e",
     summary:
-      "城市细节、神社林荫和深夜食堂。适合收纳胶片感街拍与短句。",
+      "在东京的灰蓝天光下，红砖钟楼把城市的安静一面留在镜头里。",
+    intro:
+      "东京不只有霓虹和人潮，也有被云层压低的校园、湿润的石板路和红砖建筑的沉稳线条。这一页先从一座钟楼开始，记录城市里更安静的侧面。",
+    notes: [
+      "把红砖钟楼作为东京页的第一张主视觉，先记录建筑和天气带来的氛围。",
+      "后续可以补充街区散步、车站、咖啡馆和夜色里的城市细节。",
+      "照片章节建议按校园建筑、街道秩序、夜晚霓虹三个方向扩展。",
+    ],
+    gallery: [
+      {
+        title: "Red Brick Clock Tower",
+        image: "/assets/photos/japan-tokyo/hero-cover.jpg",
+        caption: "阴天让红砖和钟面显得更安静，像东京慢下来的一次呼吸。",
+      },
+    ],
   },
   {
     slug: "morocco",

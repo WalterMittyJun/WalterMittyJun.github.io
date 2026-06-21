@@ -1,0 +1,100 @@
+---
+import GalleryCard from "../../components/GalleryCard.astro";
+import PhotoSlots from "../../components/PhotoSlots.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { destinations } from "../../data/destinations";
+
+const destination = destinations.find((item) => item.slug === "tokyo");
+
+if (!destination) {
+  throw new Error("Tokyo destination data is missing");
+}
+
+const heroImage = destination.hero ?? destination.cover;
+const intro = destination.intro ?? destination.summary;
+---
+
+<BaseLayout
+  title="Tokyo"
+  description="东京旅行相册：红砖钟楼、校园建筑和城市漫游。"
+  ogImage={destination.cover}
+>
+  <main>
+    <section class="site-shell page-hero">
+      <p class="eyebrow">Japan / Quiet Architecture</p>
+      <h1>{destination.city}</h1>
+      <p class="lead">{intro}</p>
+      <div class="meta-row">
+        <span class="pill">{destination.country}</span>
+        <span class="pill">{destination.season}</span>
+        <span class="pill">{destination.year}</span>
+        <span class="pill">{destination.region}</span>
+      </div>
+    </section>
+
+    <section class="site-shell section">
+      <article class="panel story-panel">
+        <div class="story-media">
+          <img src={heroImage} alt="东京红砖钟楼" />
+        </div>
+        <div class="story-copy">
+          <div>
+            <p class="eyebrow">Opening Note</p>
+            <h2>阴天里的红砖钟楼。</h2>
+            <p class="lead">
+              这一页先用你提供的建筑照片作为东京主视觉。它不像霓虹里的东京，更像一次安静的步行：云层很低，砖墙很稳，时间停在钟面上。
+            </p>
+          </div>
+          <a class="button secondary" href="#gallery">看东京相册</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="site-shell section">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Route Notes</p>
+          <h2>路线和记录角度</h2>
+        </div>
+        <p>这一页先从校园建筑开始，后续可以继续扩展到街区、车站、咖啡馆和夜晚霓虹。</p>
+      </div>
+      <div class="timeline">
+        {
+          destination.notes?.map((note, index) => (
+            <div class="timeline-item">
+              <time>{String(index + 1).padStart(2, "0")}</time>
+              <div>
+                <h3>{note.split("。")[0]}</h3>
+                <p>{note}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="site-shell section" id="gallery">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>东京相册</h2>
+        </div>
+        <p>这张照片已经放入 <code>public/assets/photos/japan-tokyo/hero-cover.jpg</code>。继续补照片时，把新图放进同一目录并扩展 gallery 即可。</p>
+      </div>
+      <div class="gallery-grid">
+        {destination.gallery?.map((photo) => <GalleryCard photo={photo} />)}
+      </div>
+    </section>
+
+    <section class="site-shell section" id="photo-slots">
+      <div class="placeholder-dropzone">
+        <p class="eyebrow">Next Photos</p>
+        <h2>建议继续补充的东京照片</h2>
+        <p class="lead">
+          可以继续补充街道、车站、神社、深夜食堂、咖啡馆和夜景，让东京从一张建筑照片扩展成完整城市记忆。
+        </p>
+        <PhotoSlots />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
